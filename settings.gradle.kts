@@ -19,4 +19,4 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":library")
+include(":compose-settings-ui")

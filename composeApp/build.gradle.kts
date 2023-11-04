@@ -48,12 +48,12 @@ kotlin {
     }
     val commonMain by getting {
       dependencies {
-        implementation(projects.library)
+        implementation(projects.composeSettingsUi)
 
         implementation(compose.runtime)
         implementation(compose.foundation)
         implementation(compose.material)
-        
+
         @OptIn(ExperimentalComposeLibrary::class)
         implementation(compose.components.resources)
       }
