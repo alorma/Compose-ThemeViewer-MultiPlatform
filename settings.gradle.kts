@@ -19,4 +19,4 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":compose-settings-ui")
+include(":material3-theme-viewer")

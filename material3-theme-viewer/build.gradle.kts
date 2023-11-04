@@ -65,7 +65,7 @@ kotlin {
 }
 
 android {
-  namespace = "com.alorma.compose.settings.library"
+  namespace = "com.alorma.material3.theme.library"
   compileSdk = libs.versions.android.compileSdk.get().toInt()
 
   sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -108,7 +108,7 @@ compose.desktop {
   application {
     nativeDistributions {
       targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-      packageName = "com.alorma.compose.settings.library"
+      packageName = "com.alorma.material3.theme.library"
       packageVersion = "1.0.0"
     }
   }

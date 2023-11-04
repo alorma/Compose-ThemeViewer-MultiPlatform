@@ -54,7 +54,7 @@ kotlin {
       dependencies {
         implementation(compose.material3)
 
-        implementation(projects.composeSettingsUi)
+        implementation(projects.material3ThemeViewer)
 
         implementation(compose.runtime)
         implementation(compose.foundation)
@@ -68,7 +68,7 @@ kotlin {
 }
 
 android {
-  namespace = "com.alorma.compose.settings"
+  namespace = "com.alorma.material3.theme.sample"
   compileSdk = libs.versions.android.compileSdk.get().toInt()
 
   sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -76,7 +76,7 @@ android {
   sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
   defaultConfig {
-    applicationId = "com.alorma.compose.settings"
+    applicationId = "com.alorma.material3.theme.sample"
     minSdk = libs.versions.android.minSdk.get().toInt()
     targetSdk = libs.versions.android.targetSdk.get().toInt()
     versionCode = 1
@@ -113,7 +113,7 @@ compose.desktop {
 
     nativeDistributions {
       targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-      packageName = "com.alorma.compose.settings"
+      packageName = "com.alorma.material3.theme.sample"
       packageVersion = "1.0.0"
     }
   }

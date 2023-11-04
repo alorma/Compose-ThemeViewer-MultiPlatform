@@ -1,4 +1,4 @@
-package com.alorma.compose.settings
+package com.alorma.material3.theme.sample
 
 import App
 import android.os.Bundle
