@@ -19,4 +19,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":iosApp")
 include(":material3-theme-viewer")
