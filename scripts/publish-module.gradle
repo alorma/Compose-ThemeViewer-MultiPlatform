@@ -25,7 +25,7 @@ publishing {
 
       pom {
         name = project.project.getName()
-        description = 'Compose settings'
+        description = 'Compose Theme Viewer'
         url = 'https://github.com/alorma/Compose-Settings'
         licenses {
           license {

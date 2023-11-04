@@ -18,4 +18,11 @@ buildscript {
 apply(plugin = "io.codearte.nexus-staging")
 apply(plugin = "io.github.gradle-nexus.publish-plugin")
 
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+  }
+}
+
 apply(from = "${rootDir}/scripts/publish-root.gradle")
