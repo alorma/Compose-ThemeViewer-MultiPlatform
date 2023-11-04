@@ -14,6 +14,8 @@ kotlin {
   @OptIn(ExperimentalKotlinGradlePluginApi::class)
   targetHierarchy.default()
 
+  withSourcesJar()
+
   androidTarget {
     publishLibraryVariants("release")
     compilations.all {
