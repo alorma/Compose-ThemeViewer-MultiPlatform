@@ -22,7 +22,7 @@ jobs:
       - name: Prepare environment
         env:
           GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
-          SIGNING_SECRET_KEY_RING_FILE: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
+          SIGNING_SECRET_KEY_RING_FILE: ${{ env.SIGNING_SECRET_KEY_RING_FILE }}
         run: |
           git fetch --unshallow
           sudo bash -c "echo '$GPG_KEY_CONTENTS' | base64 -d > '$SIGNING_SECRET_KEY_RING_FILE'"
@@ -35,9 +35,9 @@ jobs:
       - name: Publish to MavenCentral
         run: ./gradlew publishReleasePublicationToSonatypeRepository --max-workers 1 closeAndReleaseSonatypeStagingRepository
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_USERNAME: ${{ variables.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-          GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
+          GPG_KEY_NAME: ${{ env.GPG_KEY_NAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          SIGNING_SECRET_KEY_RING_FILE: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
+          SIGNING_SECRET_KEY_RING_FILE: ${{ env.SIGNING_SECRET_KEY_RING_FILE }}
           SONATYPE_STAGING_PROFILE_ID: ${{ secrets.SONATYPE_STAGING_PROFILE_ID }}
