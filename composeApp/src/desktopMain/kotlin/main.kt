@@ -1,4 +1,5 @@
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -18,9 +19,13 @@ import androidx.compose.ui.window.application
         modifier = Modifier
           .fillMaxHeight()
           .widthIn(300.dp),
-        drawerContent = { ThemeViewer(Modifier
-          .fillMaxHeight()
-          .widthIn(300.dp)) },
+        drawerContent = {
+          ThemeViewer(
+            Modifier
+              .fillMaxHeight()
+              .width(300.dp)
+          )
+        },
       ) {
         Scaffold(
           topBar = { TopAppBar(title = { Text(text = "Desktop demp") }) },
