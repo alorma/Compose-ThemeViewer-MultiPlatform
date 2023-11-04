@@ -1,4 +1,4 @@
-rootProject.name = "ComposeSettings"
+rootProject.name = "ComposeThemeViewer"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
