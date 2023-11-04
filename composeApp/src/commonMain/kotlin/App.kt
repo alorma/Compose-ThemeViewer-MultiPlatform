@@ -17,7 +17,7 @@ fun App() {
     Scaffold(
       topBar = {
         TopAppBar(
-          title = { Text(text = getLibraryPlatformName()) },
+          title = { Text(text = "Theme Viewer") },
         )
       },
     ) { padding ->

@@ -17,7 +17,7 @@ fun LibComponent() {
     Column(
       modifier = Modifier.padding(16.dp),
     ) {
-      Text("Hello from ${getLibraryPlatformName()}")
+      Text("Hello")
       Spacer(modifier = Modifier.height(24.dp))
       FilledTonalButton(
         onClick = {},

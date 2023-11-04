@@ -1,1 +1,0 @@
-expect fun getLibraryPlatformName(): String
