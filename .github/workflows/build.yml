@@ -26,6 +26,7 @@ jobs:
           SIGNING_SECRET_KEY_RING_FILE: ${{ vars.SIGNING_SECRET_KEY_RING_FILE }}
           OSSRH_USERNAME: ${{ vars.OSSRH_USERNAME }}
           GPG_KEY_NAME: ${{ vars.GPG_KEY_NAME }}
+        run: echo ""
 
         # Builds the release artifacts of the library
       - name: Release build
