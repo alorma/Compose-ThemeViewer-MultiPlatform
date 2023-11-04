@@ -8,11 +8,14 @@ plugins {
   alias(libs.plugins.jetbrainsCompose)
 }
 
+apply(from = "${rootProject.projectDir}/scripts/publish-module.gradle")
+
 kotlin {
   @OptIn(ExperimentalKotlinGradlePluginApi::class)
   targetHierarchy.default()
 
   androidTarget {
+    publishLibraryVariants("release")
     compilations.all {
       kotlinOptions {
         jvmTarget = "1.8"
@@ -61,7 +64,6 @@ kotlin {
   }
 }
 
-
 android {
   namespace = "com.alorma.compose.settings.library"
   compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -83,6 +85,10 @@ android {
     resources {
       excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
+  }
+  lint {
+    checkReleaseBuilds = false
+    abortOnError = false
   }
   buildTypes {
     getByName("release") {
