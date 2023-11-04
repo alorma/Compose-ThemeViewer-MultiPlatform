@@ -14,3 +14,5 @@ buildscript {
     }
   }
 }
+
+apply(from = "${rootDir}/scripts/publish-root.gradle")
