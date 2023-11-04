@@ -22,6 +22,7 @@ kotlin {
 
   jvm("desktop")
 
+/*
   listOf(
     iosX64(),
     iosArm64(),
@@ -32,10 +33,12 @@ kotlin {
       isStatic = true
     }
   }
+ */
 
   sourceSets {
     val androidMain by getting {
       dependencies {
+        implementation(compose.material3)
         implementation(libs.compose.ui)
         implementation(libs.compose.ui.tooling.preview)
         implementation(libs.androidx.activity.compose)
@@ -43,16 +46,19 @@ kotlin {
     }
     val desktopMain by getting {
       dependencies {
+        implementation(compose.material3)
         implementation(compose.desktop.currentOs)
       }
     }
     val commonMain by getting {
       dependencies {
+        implementation(compose.material3)
+
         implementation(projects.composeSettingsUi)
 
         implementation(compose.runtime)
         implementation(compose.foundation)
-        implementation(compose.material)
+        implementation(compose.material3)
 
         @OptIn(ExperimentalComposeLibrary::class)
         implementation(compose.components.resources)

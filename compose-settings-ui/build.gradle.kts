@@ -1,5 +1,5 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -22,6 +22,7 @@ kotlin {
 
   jvm("desktop")
 
+  /*
   listOf(
     iosX64(),
     iosArm64(),
@@ -32,6 +33,7 @@ kotlin {
       isStatic = true
     }
   }
+   */
 
   sourceSets {
     val androidMain by getting {
@@ -48,9 +50,10 @@ kotlin {
     }
     val commonMain by getting {
       dependencies {
+        implementation(compose.material3)
+
         implementation(compose.runtime)
         implementation(compose.foundation)
-        implementation(compose.material)
         @OptIn(ExperimentalComposeLibrary::class)
         implementation(compose.components.resources)
       }
