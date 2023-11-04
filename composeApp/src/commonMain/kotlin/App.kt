@@ -26,7 +26,7 @@ fun App() {
           .consumeWindowInsets(padding)
           .padding(top = padding.calculateTopPadding()),
       ) {
-        LibComponent()
+        ThemeViewer()
       }
     }
   }
