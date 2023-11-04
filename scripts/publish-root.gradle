@@ -2,9 +2,6 @@
 ext["ossrhUsername"] = ''
 ext["ossrhPassword"] = ''
 ext["sonatypeStagingProfileId"] = ''
-ext["signing.keyId"] = '0C762F0D'
-ext["signing.password"] = 'dsLCfZhaoHbgqgNeRHuAY'
-ext["signing.secretKeyRingFile"] = '../secret.gpg'
 
 File secretPropsFile = project.rootProject.file('local.properties')
 if (secretPropsFile.exists()) {
