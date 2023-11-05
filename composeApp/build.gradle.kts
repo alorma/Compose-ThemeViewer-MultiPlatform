@@ -1,6 +1,5 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
   alias(libs.plugins.kotlinMultiplatform)
@@ -9,8 +8,7 @@ plugins {
 }
 
 kotlin {
-  @OptIn(ExperimentalKotlinGradlePluginApi::class)
-  targetHierarchy.default()
+  applyDefaultHierarchyTemplate()
 
   androidTarget {
     compilations.all {
