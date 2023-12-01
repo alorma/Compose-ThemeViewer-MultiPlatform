@@ -23,6 +23,8 @@ fun App() {
         .consumeWindowInsets(padding)
         .padding(top = padding.calculateTopPadding())
         .fillMaxSize(),
-    )
+    ) {
+
+    }
   }
 }

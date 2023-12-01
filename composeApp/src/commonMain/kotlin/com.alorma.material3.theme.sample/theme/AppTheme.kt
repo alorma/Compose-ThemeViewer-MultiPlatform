@@ -3,8 +3,6 @@ package com.alorma.material3.theme.sample.theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
@@ -21,7 +19,7 @@ object AppTheme {
     get() = LocalAppColorScheme.current
 }
 
-private val LightColors = lightColorScheme(
+private val LightColors = AppColorScheme(
   primary = md_theme_light_primary,
   onPrimary = md_theme_light_onPrimary,
   primaryContainer = md_theme_light_primaryContainer,
@@ -50,10 +48,14 @@ private val LightColors = lightColorScheme(
   inversePrimary = md_theme_light_inversePrimary,
   surfaceTint = md_theme_light_surfaceTint,
   outlineVariant = md_theme_light_outlineVariant,
+  success = md_theme_light_success,
+  onSuccess = md_theme_light_onSuccess,
+  alert = md_theme_light_alert,
+  onAlert = md_theme_light_onAlert,
   scrim = md_theme_light_scrim,
 )
 
-private val DarkColors = darkColorScheme(
+private val DarkColors = AppColorScheme(
   primary = md_theme_dark_primary,
   onPrimary = md_theme_dark_onPrimary,
   primaryContainer = md_theme_dark_primaryContainer,
@@ -82,6 +84,10 @@ private val DarkColors = darkColorScheme(
   inversePrimary = md_theme_dark_inversePrimary,
   surfaceTint = md_theme_dark_surfaceTint,
   outlineVariant = md_theme_dark_outlineVariant,
+  success = md_theme_dark_success,
+  onSuccess = md_theme_dark_onSuccess,
+  alert = md_theme_dark_alert,
+  onAlert = md_theme_dark_onAlert,
   scrim = md_theme_dark_scrim,
 )
 
@@ -92,14 +98,18 @@ fun AppTheme(
   content: @Composable () -> Unit,
 ) {
 
-  val useColorScheme = colorScheme ?: if (isSystemInDark) {
+  val nonCustomScheme = if (isSystemInDark) {
     DarkColors
   } else {
     LightColors
   }
 
+  val useColorScheme = colorScheme?.let {
+    AppColorScheme(it, nonCustomScheme)
+  } ?: nonCustomScheme
+
   CompositionLocalProvider(
-    LocalAppColorScheme provides AppColorScheme(useColorScheme)
+    LocalAppColorScheme provides useColorScheme
   ) {
     MaterialTheme(
       colorScheme = LocalAppColorScheme.current.materialColorScheme(),
