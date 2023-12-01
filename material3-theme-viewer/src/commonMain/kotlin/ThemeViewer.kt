@@ -100,6 +100,27 @@ fun ThemeViewer(
       contentColor = colorScheme.tertiaryContainer,
       containerText = "onTertiaryContainer",
     )
+    headerItem("Error colors")
+    colorItem(
+      containerColor = colorScheme.error,
+      containerText = "error",
+    )
+    colorItem(
+      containerColor = colorScheme.errorContainer,
+      containerText = "errorContainer",
+    )
+    subHeaderItem("onError")
+    colorItem(
+      containerColor = colorScheme.onError,
+      contentColor = colorScheme.error,
+      borderColor = !isDark,
+      containerText = "onError",
+    )
+    colorItem(
+      containerColor = colorScheme.onErrorContainer,
+      contentColor = colorScheme.errorContainer,
+      containerText = "onErrorContainer",
+    )
     customContent()
   }
 }
