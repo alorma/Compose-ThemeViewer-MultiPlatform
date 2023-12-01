@@ -79,6 +79,27 @@ fun ThemeViewer(
       contentColor = colorScheme.secondaryContainer,
       containerText = "onSecondaryContainer",
     )
+    headerItem("Tertiary colors")
+    colorItem(
+      containerColor = colorScheme.tertiary,
+      containerText = "tertiary",
+    )
+    colorItem(
+      containerColor = colorScheme.tertiaryContainer,
+      containerText = "tertiaryContainer",
+    )
+    subHeaderItem("onTertiary")
+    colorItem(
+      containerColor = colorScheme.onTertiary,
+      contentColor = colorScheme.tertiary,
+      borderColor = !isDark,
+      containerText = "onTertiary",
+    )
+    colorItem(
+      containerColor = colorScheme.onTertiaryContainer,
+      contentColor = colorScheme.tertiaryContainer,
+      containerText = "onTertiaryContainer",
+    )
     customContent()
   }
 }
