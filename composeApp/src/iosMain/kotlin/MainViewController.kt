@@ -4,6 +4,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.window.ComposeUIViewController
 import com.alorma.material3.theme.sample.App
+import com.alorma.material3.theme.sample.AppTheme
 
 fun MainViewController() = ComposeUIViewController {
   val colorScheme = if (isSystemInDarkTheme()) {
@@ -11,7 +12,7 @@ fun MainViewController() = ComposeUIViewController {
   } else {
     lightColorScheme()
   }
-  MaterialTheme(colorScheme = colorScheme) {
+  AppTheme(colorScheme = colorScheme) {
     App()
   }
 }

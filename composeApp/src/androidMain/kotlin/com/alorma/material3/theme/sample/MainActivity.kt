@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -24,7 +23,7 @@ class MainActivity : ComponentActivity() {
       } else {
         colorScheme()
       }
-      MaterialTheme(colorScheme = colorScheme) {
+      AppTheme(colorScheme = colorScheme) {
         App()
       }
     }
