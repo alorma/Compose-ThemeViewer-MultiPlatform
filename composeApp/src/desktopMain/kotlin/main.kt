@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import com.alorma.material3.theme.sample.App
-import com.alorma.material3.theme.sample.AppTheme
+import com.alorma.material3.theme.sample.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun main() = application {

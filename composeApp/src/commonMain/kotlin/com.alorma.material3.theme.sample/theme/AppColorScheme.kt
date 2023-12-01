@@ -1,0 +1,71 @@
+package com.alorma.material3.theme.sample.theme
+
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.ui.graphics.Color
+
+data class AppColorScheme(
+  val primary: Color,
+  val onPrimary: Color,
+  val primaryContainer: Color,
+  val onPrimaryContainer: Color,
+  val inversePrimary: Color,
+  val secondary: Color,
+  val onSecondary: Color,
+  val secondaryContainer: Color,
+  val onSecondaryContainer: Color,
+  val tertiary: Color,
+  val onTertiary: Color,
+  val tertiaryContainer: Color,
+  val onTertiaryContainer: Color,
+  val background: Color,
+  val onBackground: Color,
+  val surface: Color,
+  val onSurface: Color,
+  val surfaceVariant: Color,
+  val onSurfaceVariant: Color,
+  val surfaceTint: Color,
+  val inverseSurface: Color,
+  val inverseOnSurface: Color,
+  val error: Color,
+  val onError: Color,
+  val errorContainer: Color,
+  val onErrorContainer: Color,
+  val outline: Color,
+  val outlineVariant: Color,
+  val scrim: Color,
+) {
+  fun materialColors(): ColorScheme {
+    return lightColorScheme(
+      primary = primary,
+      onPrimary = onPrimary,
+      primaryContainer = primaryContainer,
+      onPrimaryContainer = onPrimaryContainer,
+      inversePrimary = inversePrimary,
+      secondary = secondary,
+      onSecondary = onSecondary,
+      secondaryContainer = secondaryContainer,
+      onSecondaryContainer = onSecondaryContainer,
+      tertiary = tertiary,
+      onTertiary = onTertiary,
+      tertiaryContainer = tertiaryContainer,
+      onTertiaryContainer = onTertiaryContainer,
+      background = background,
+      onBackground = onBackground,
+      surface = surface,
+      onSurface = onSurface,
+      surfaceVariant = surfaceVariant,
+      onSurfaceVariant = onSurfaceVariant,
+      surfaceTint = surfaceTint,
+      inverseSurface = inverseSurface,
+      inverseOnSurface = inverseOnSurface,
+      error = error,
+      onError = onError,
+      errorContainer = errorContainer,
+      onErrorContainer = onErrorContainer,
+      outline = outline,
+      outlineVariant = outlineVariant,
+      scrim = scrim,
+    )
+  }
+}
