@@ -35,7 +35,7 @@ data class AppColorScheme(
   val outlineVariant: Color,
   val scrim: Color,
 ) {
-  fun materialColors(): ColorScheme {
+  fun materialColorScheme(): ColorScheme {
     return lightColorScheme(
       primary = primary,
       onPrimary = onPrimary,
@@ -67,5 +67,41 @@ data class AppColorScheme(
       outlineVariant = outlineVariant,
       scrim = scrim,
     )
+  }
+
+  companion object {
+    operator fun invoke(colorScheme: ColorScheme): AppColorScheme {
+      return AppColorScheme(
+        primary = colorScheme.primary,
+          onPrimary = colorScheme.onPrimary,
+          primaryContainer = colorScheme.primaryContainer,
+          onPrimaryContainer = colorScheme.onPrimaryContainer,
+          inversePrimary = colorScheme.inversePrimary,
+          secondary = colorScheme.secondary,
+          onSecondary = colorScheme.onSecondary,
+          secondaryContainer = colorScheme.secondaryContainer,
+          onSecondaryContainer = colorScheme.onSecondaryContainer,
+          tertiary = colorScheme.tertiary,
+          onTertiary = colorScheme.onTertiary,
+          tertiaryContainer = colorScheme.tertiaryContainer,
+          onTertiaryContainer = colorScheme.onTertiaryContainer,
+          background = colorScheme.background,
+          onBackground = colorScheme.onBackground,
+          surface = colorScheme.surface,
+          onSurface = colorScheme.onSurface,
+          surfaceVariant = colorScheme.surfaceVariant,
+          onSurfaceVariant = colorScheme.onSurfaceVariant,
+          surfaceTint = colorScheme.surfaceTint,
+          inverseSurface = colorScheme.inverseSurface,
+          inverseOnSurface = colorScheme.inverseOnSurface,
+          error = colorScheme.error,
+          onError = colorScheme.onError,
+          errorContainer = colorScheme.errorContainer,
+          onErrorContainer = colorScheme.onErrorContainer,
+          outline = colorScheme.outline,
+          outlineVariant = colorScheme.outlineVariant,
+          scrim = colorScheme.scrim,
+      )
+    }
   }
 }
