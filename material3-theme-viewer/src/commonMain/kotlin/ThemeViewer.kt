@@ -50,7 +50,7 @@ fun ThemeViewer(
     colorItem(
       containerColor = colorScheme.onPrimary,
       contentColor = colorScheme.primary,
-      borderColor = !isDark,
+      showBorder = !isDark,
       containerText = "onPrimary",
     )
     colorItem(
@@ -71,7 +71,7 @@ fun ThemeViewer(
     colorItem(
       containerColor = colorScheme.onSecondary,
       contentColor = colorScheme.secondary,
-      borderColor = !isDark,
+      showBorder = !isDark,
       containerText = "onSecondary",
     )
     colorItem(
@@ -92,7 +92,7 @@ fun ThemeViewer(
     colorItem(
       containerColor = colorScheme.onTertiary,
       contentColor = colorScheme.tertiary,
-      borderColor = !isDark,
+      showBorder = !isDark,
       containerText = "onTertiary",
     )
     colorItem(
@@ -113,13 +113,40 @@ fun ThemeViewer(
     colorItem(
       containerColor = colorScheme.onError,
       contentColor = colorScheme.error,
-      borderColor = !isDark,
+      showBorder = !isDark,
       containerText = "onError",
     )
     colorItem(
       containerColor = colorScheme.onErrorContainer,
       contentColor = colorScheme.errorContainer,
       containerText = "onErrorContainer",
+    )
+    headerItem("Surface colors")
+    colorItem(
+      containerColor = colorScheme.surface,
+      containerText = "surface",
+      showBorder = true,
+    )
+    colorItem(
+      containerColor = colorScheme.surfaceTint,
+      containerText = "surfaceTint",
+    )
+    colorItem(
+      containerColor = colorScheme.surfaceVariant,
+      containerText = "surfaceVariant",
+      showBorder = isDark,
+    )
+    subHeaderItem("onSurface")
+    colorItem(
+      containerColor = colorScheme.onSurface,
+      contentColor = colorScheme.surface,
+      showBorder = !isDark,
+      containerText = "onSurface",
+    )
+    colorItem(
+      containerColor = colorScheme.onSurfaceVariant,
+      contentColor = colorScheme.surfaceVariant,
+      containerText = "onSurfaceVariant",
     )
     customContent()
   }
@@ -164,7 +191,7 @@ private fun LazyListScope.subHeaderItem(text: String) {
 private fun LazyListScope.colorItem(
   containerColor: Color,
   contentColor: Color = Color.Unspecified,
-  borderColor: Boolean = false,
+  showBorder: Boolean = false,
   containerText: String,
 ) {
   item {
@@ -176,7 +203,7 @@ private fun LazyListScope.colorItem(
         contentColor
       },
       containerText = containerText,
-      showBorder = borderColor,
+      showBorder = showBorder,
     )
   }
 }
